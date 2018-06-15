@@ -168,6 +168,9 @@ VertexArrayObject.prototype.activate = function()
  */
 VertexArrayObject.prototype.addAttribute = function(buffer, attribute, type, normalized, stride, start)
 {
+    if (!attribute) {
+        attribute = {type: "vec2", size: 2, location: 0};
+    }
     this.attributes.push({
         buffer:     buffer,
         attribute:  attribute,
